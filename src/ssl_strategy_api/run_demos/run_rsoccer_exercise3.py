@@ -30,10 +30,11 @@ BALL_MAX_DISTANCE_M = 0.3
 PASSER_AREA = (-3.5, -1.5, -3.0, 3.0)
 STRIKER_AREA = (1.5, 3.5, -3.0, 3.0)
 INTERCEPTOR_AREA = (-1.5, 1.5, -3.0, 3.0)
+GOALKEEPER_AREA = (3.5, 4.7, -3.0, 3.0)
 PASSER_SPAWN = PASSER_AREA
 STRIKER_SPAWN = STRIKER_AREA
 RESTRICTED_AREAS = {(False, 0): PASSER_AREA, (False, 1): STRIKER_AREA,
-                    (True, 1): INTERCEPTOR_AREA}
+                    (True, 0): GOALKEEPER_AREA, (True, 1): INTERCEPTOR_AREA}
 
 
 def inside_area(x, y, area):

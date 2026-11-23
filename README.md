@@ -208,7 +208,7 @@ In run_rsoccer_exercise3, an episode ends and a fresh random layout starts when 
 
 ### Assigned areas and commands
 
-Blue robot 0 should always remain in the rectangle defined by the following coordinates: `-3.5 < x < -1.5` and `-3 < y < 3`. Blue robot 1 should remain in `1.5 < x < 3.5` and `-3 < y < 3`. Yellow robot 1 in `-1.5 < x < 1.5` and `-3 < y < 3`. Yellow robot 0 (Goalkeeper) has no assigned area.
+Blue robot 0 should always remain in the rectangle defined by the following coordinates: `-3.5 < x < -1.5` and `-3 < y < 3`. Blue robot 1 should remain in `1.5 < x < 3.5` and `-3 < y < 3`. Yellow robot 1 in `-1.5 < x < 1.5` and `-3 < y < 3`. Yellow robot 0 (Goalkeeper) should remain at `3.5 < x < 4.7`and `-3 < y < 3` Its centre may go up to x = 4.7, so standing on the goal line is not a foul.
 
 These are boundaries on the robot's centre. Your strategy should keep each robot inside its area. In the evaluation, every time a robot's centre leaves its area, it is counted as an out-of-area event for its team.
 
@@ -271,11 +271,10 @@ based on rule 8.4.2 of the
 [SSL rules](https://robocup-ssl.github.io/ssl-rules/sslrules.html).
 
 **Out of area.** Dashed red rectangles mark the blue robots' assigned areas and
-the interceptor's (yellow robot with id=1) area. These lines are visual guides, not barriers. An
+the interceptor's (yellow robot with id=1) and goalkeepr's (yellow robot with id=0) area. These lines are visual guides, not barriers. An
 out-of-area event is counted separately for each robot with an assigned area
 when its centre leaves or touches its boundary. Another one is counted for that
 robot every two simulated seconds (80 steps) it remains outside. Returning
 inside resets its timer, so leaving again counts immediately. A ball respawn
 resets all these timers. If a robot is still outside, a new one is counted on
-the next step. The goalkeeper has no assigned area.
-The robots are not restricted in evaluation, fouls and out-of-area events do not stop play. However, they are recorded as negative performance indicators and negatively affect your strategies' score.
+the next step. The robots are not restricted in evaluation, fouls and out-of-area events do not stop play. However, they are recorded as negative performance indicators and negatively affect your strategies' score.
