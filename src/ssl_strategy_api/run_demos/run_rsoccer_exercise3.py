@@ -103,7 +103,8 @@ class Exercise3Env(SSLBaseEnv):
                 continue
             point = self._sample_ball_near_passer(passer, robots)
             if point is not None:
-                frame.ball = Ball(x=point[0], y=point[1], v_x=0.0, v_y=0.0)
+                frame.ball = Ball(x=point[0], y=point[1], v_x=5.0, v_y=5.0)
+                #frame.ball = Ball(x=point[0], y=point[1], v_x=0.0, v_y=0.0)
                 return frame
         raise RuntimeError("could not sample a valid Exercise 3 layout")
 
